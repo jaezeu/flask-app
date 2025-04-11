@@ -26,3 +26,40 @@ You can then run your app within your virtual environment:
 ```bash
 python app.py
 ```
+
+## Building and running docker app
+
+Ensure that you have the following 3 files in the directory where you are about to run the commands:
+
+1) app.py
+2) Dockerfile (https://docs.docker.com/engine/reference/builder/)
+3) requirements.txt (https://pip.pypa.io/en/stable/reference/requirements-file-format/)
+
+You may have to run the commands below in sudo if your user is not in a docker user group. To run docker as a non root user: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
+
+```
+# Build a docker image locally 
+docker build -t flask-app .
+
+# Listing your built images 
+docker images
+
+# Starting your local container with port mapping from host port to container port(-p) and in detached mode(-d)
+docker run -d -p 8080:8080 flask-app
+
+# List your running containers
+docker ps
+
+# List all your containers(Running and stopped)
+docker ps -a
+
+# To stop and remove your container
+docker stop <container ID>
+docker rm <container ID>
+
+# To remove your docker images
+docker rmi <image ID>
+
+```
+
+For all docker commands: https://docs.docker.com/engine/reference/commandline/cli/
