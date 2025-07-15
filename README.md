@@ -60,6 +60,12 @@ docker rm <container ID>
 # To remove your docker images
 docker rmi <image ID>
 
+# To check your container logs
+docker logs <container ID>
+
+# To exec into your container
+docker exec -it <container ID> /bin/bash
+
 ```
 
 For all docker commands: https://docs.docker.com/engine/reference/commandline/cli/
